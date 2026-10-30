@@ -33,6 +33,8 @@ def download_survey(
     survey_id: str,
     filename_path: str,
     token: str,
+    start_date: str | None = None,
+    end_date: str | None = None,
     format: str = "json",
     proxy: str = "",
 ):
@@ -47,6 +49,10 @@ def download_survey(
     params = {
         "format": format,
     }
+    if start_date is not None:
+        params["startDate"] = start_date
+    if end_date is not None:
+        params["endDate"] = end_date
     try:
         response = session.get(
             f"https://api.skyra.no/beta/surveys/{survey_id}/export",
