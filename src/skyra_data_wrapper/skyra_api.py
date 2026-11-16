@@ -59,9 +59,9 @@ def download_survey(
         Name and path to the survey results file you are downloading. F.ex "data/survey.csv" or "data/survey.json"
     token: str, required
         A token from skyra, with scope to download one or more surveys
-    start_data: str, optional
+    start_data: str or None, optional
         The start date to gather respones from. Use ISO 8601 with timezone F.ex 2026-01-05T00:00:00+01:00 for Oslo timezone
-    end_date: str, optional
+    end_date: str or None, optional
         The end date to gather respones from. Use ISO 8601 with timezone F.ex 2026-01-12T00:00:00+01:00 for Oslo timezone
     format: str, optional
         The file format for your download. Can be "csv" or "json". Default is "json"
