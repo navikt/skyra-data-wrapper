@@ -1,6 +1,8 @@
 # skyra data wrapper
 
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tobiasmcvey/amplitude-data-wrapper/.github%2Fworkflows%2Frelease.yml)](https://github.com/navikt/skyra-data-wrapper/blob/main/.github/workflows/release.yml)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/skyra-data-wrapper?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/skyra-data-wrapper)
 
 This is a wrapper for Skyra APIs. You can use it to download survey responses and metadata for each survey. Built with requests and tqdm.
 
