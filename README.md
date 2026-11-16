@@ -72,7 +72,7 @@ data = skyra.download_survey(
     survey_id=survey_ids[0],
     filename_path="data/test_survey.json",
     token=token,
-    format="json"
+    format="json",
 )
 ```
 
