@@ -32,7 +32,7 @@ Note most of these APIs are still in beta and might change in the future.
 You can list all surveys available by your skyra token
 
 ```python
-import src.skyra_data_wrapper.skyra_api as skyra
+import skyra_data_wrapper.skyra_api as skyra
 
 surveys = skyra.find_surveys(token=token)
 ```
