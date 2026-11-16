@@ -4,12 +4,12 @@ import logging
 import requests
 from tqdm.auto import tqdm
 
-logging.getLogger(__name__)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
+logger = logging.getLogger(__name__)
 
 
 # %%
@@ -106,6 +106,6 @@ def download_survey(
             for chunk in response.iter_content(chunk_size=8192):
                 fout.write(chunk)
 
-        logging.info("Downloaded survey %s", survey_id)
+        logger.info("Downloaded survey %s", survey_id)
 
     return response
