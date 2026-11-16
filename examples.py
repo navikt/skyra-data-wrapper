@@ -11,7 +11,7 @@ import src.skyra_data_wrapper.skyra_api as skyra
 # %%
 load_dotenv()
 
-token = os.getenv("api_key")
+token = os.getenv("api_key", default="empty")
 # %%
 surveys = skyra.find_surveys(token=token)
 # %%
