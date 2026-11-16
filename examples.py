@@ -1,8 +1,8 @@
 # %%
-import os
 import json
-from datetime import datetime
+import os
 import zoneinfo
+from datetime import datetime
 
 from dotenv import load_dotenv
 
@@ -59,5 +59,5 @@ data = skyra.download_survey(
     end_date=end.isoformat(),  # 2026-01-12T00:00:00+01:00
 )
 # %%
-data.status_code
+print(data.status_code)
 # %%
