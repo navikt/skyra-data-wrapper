@@ -13,9 +13,19 @@ logging.basicConfig(
 
 
 # %%
-def find_surveys(token: str):
+def find_surveys(token: str) -> requests.Response:
     """
-    Find survey for token
+    Find surveys for token
+
+    Parameters
+    ----------
+    token: str, required
+        A token from skyra, with scope to download one or more surveys
+
+    Returns
+    -------
+    response: requests.Response
+        A response object from requests module. Contains the surveys the token is scoped for.
     """
     headers = {
         "Authorization": f"Bearer {token}",
@@ -37,9 +47,31 @@ def download_survey(
     end_date: str | None = None,
     format: str = "json",
     proxy: str = "",
-):
+) -> requests.Response:
     """
     Download specific survey by ID using token
+
+    Parameters
+    ----------
+    survey_id: str, required
+        The survey ID, which can be obtained from a skyra token
+    filename_path: str, required
+        Name and path to the survey results file you are downloading. F.ex "data/survey.csv" or "data/survey.json"
+    token: str, required
+        A token from skyra, with scope to download one or more surveys
+    start_data: str, optional
+        The start date to gather respones from. Use ISO 8601 with timezone F.ex 2026-01-05T00:00:00+01:00 for Oslo timezone
+    end_date: str, optional
+        The end date to gather respones from. Use ISO 8601 with timezone F.ex 2026-01-12T00:00:00+01:00 for Oslo timezone
+    format: str, optional
+        The file format for your download. Can be "csv" or "json". Default is "json"
+    proxy: str, optional
+        Allows setting a custom domain and endpoint for a proxy service if needed.
+
+    Returns
+    -------
+    response: requests.Response
+        A response object from requests module. Contains the survey questions and responses.
     """
     session = requests.Session()
     headers = {
